@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Contacts } from '../../models/IContacts';
 import { ContactService } from '../contact.service';
 import { Router, RouterLink } from '@angular/router';
@@ -14,7 +14,9 @@ import { ContactModifyComponent } from '../contact-modify/contact-modify.compone
 export class ContactListComponent implements OnInit {
   contacts:Contacts[]=[];
   
-  constructor(private contactService:ContactService,private router:Router){}
+  // constructor(private contactService:ContactService,private router:Router){}
+  contactService:ContactService=inject(ContactService);
+  router:Router=inject(Router)
 
   ngOnInit(): void {
     this.loadContacts();
