@@ -1,0 +1,20 @@
+<h2>Contact Details</h2>
+
+<div class="container mt-3 mb-3">
+  <div class="card shadow" *ngIf="contact">
+    <div class="card-header bg-primary text-white">
+      Contact Details
+    </div>
+    <div class="card-body">
+      <p><strong>First Name:</strong> {{ contact.firstName }}</p>
+      <p><strong>Last Name:</strong> {{ contact.lastName }}</p>
+      <p><strong>Gender:</strong> {{ contact.gender }}</p>
+      <p><strong>Date of Birth:</strong> {{ contact.dateOfBirth }}</p>
+      <p><strong>Location:</strong> {{ contact.location }}</p>
+      <p><strong>Email:</strong> {{ contact.email }}</p>
+      <p><strong>Mobile:</strong> {{ contact.mobile }}</p>
+    </div>
+  </div>
+
+  <button (click)="goBack()" class="btn btn-primary mt-3">Back to Contact List</button>
+</div>

@@ -1,0 +1,30 @@
+<h2>Contact List</h2>
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Actions</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contacts">
+      <td>{{ contact.firstName }}</td>
+      <td>{{ contact.lastName }}</td>
+      <td>{{ contact.email }}</td>
+      <td>{{ contact.mobile }}</td>
+      <td>
+        <button (click)="onEdit(contact.id)" class="btn btn-primary">Edit</button>
+        <button (click)="onDelete(contact.id)" class="btn btn-primary">Delete</button>
+      </td>
+      <td>
+        <button (click)="onViewDetails(contact.id)" class="btn btn-info">Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- <button routerLink="/add-contact" class="btn btn-success">Add New Contact</button> -->
+ <button type="button" (click)="moveToModify()" class="btn btn-success">Add Contact</button>
